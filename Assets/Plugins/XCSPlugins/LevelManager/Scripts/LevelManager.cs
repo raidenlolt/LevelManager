@@ -29,13 +29,10 @@ public class LevelManager : StateBehaviour
 #region State methods
 
 #region State Init
-
-	void Init_Enter ()
+	
+	public void OnInitDone ()
 	{
-	}
-
-	void Init_Exit ()
-	{
+		ChangeState (States.Login);
 	}
 
 #endregion
@@ -44,13 +41,21 @@ public class LevelManager : StateBehaviour
 
 	void Login_Enter ()
 	{
+		//SceneLoader.SwitchScene 
 	}
 
 	void Login_Exit ()
 	{
 	}
 
+	public void OnLoginDone ()
+	{
+		ChangeState (States.PreAssessment);
+	}
+
 #endregion
+
+#region State PreAssessmanet
 
 	void PreAssessment_Enter ()
 	{
@@ -60,6 +65,12 @@ public class LevelManager : StateBehaviour
 	{
 		//
 	}
+
+	public void OnPreAssementDone ()
+	{
+	}
+
+#endregion
 
 #endregion
 }
